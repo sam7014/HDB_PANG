@@ -107,6 +107,9 @@
 <body>
   <input type="checkbox" id="toggle">
 
+  <!-- 사운드 요소 추가 -->
+  <audio id="uiAudio" src="UIFH.mp3" preload="auto"></audio>
+
   <!-- 하트 애니메이션 -->
   <div class="hearts">
     <div class="heart"></div><div class="heart"></div><div class="heart"></div>
@@ -115,19 +118,20 @@
 
   <!-- Intro Section -->
   <div class="intro">
-    <img src="사진.jpg" alt="생일 축하 이미지">
     <h1 class="line1">생일 축하해 하은아♡</h1>
     <h2 class="line2">남은 모든 생일을 나와 함께 해줄래?</h2>
-    <label for="toggle" class="click">클릭해봐!</label>
+    <label for="toggle" class="click" id="introClick">클릭해봐!</label>
   </div>
 
   <!-- Main Section (페이지1~3) -->
   <div class="main">
-    <h1>우리의 추억</h1>
-
     <div id="content1">
-      <img src="image1.jpg" alt="추억 사진 1">
-      <p>추억 사진 1에 대한 내용</p>
+      <img src="1.jpg" alt="추억 사진 1">
+      <p>여보 생일 축하해!!!</p>
+      <p>우리의 첫 데이트... 나 죽을뻔했던 날...ㅋㅋㅋ</p>
+      <p>직접 만들어봤는데 내가 웹 개발자가 아니여서 엉성할 수 있지만</p>
+      <p>그래두 우리의 추억이 담긴 페이지를 만들어보고싶어서</p>
+      <p>이렇게 한 번 만들어 봤어!!</p>
       <div class="btnArea">
         <div class="btn"><label>이전</label></div>
         <div class="btn"><label>다음</label></div>
@@ -135,8 +139,12 @@
     </div>
 
     <div id="content2">
-      <img src="image2.jpg" alt="추억 사진 2">
-      <p>추억 사진 2에 대한 내용</p>
+      <img src="3.jpg" alt="추억 사진 2">
+      <p>우리 100일때!</p>
+      <p>이태원에 맛있는것두 먹구 사진도 찍구</p>
+      <p>어색하게 사진 찍을 때가 엊그제 같은데</p>
+      <p>흐이제 곧 웨딩촬영을 하러 가네?</p>
+      <p>흐흫</p>
       <div class="btnArea">
         <div class="btn"><label>이전</label></div>
         <div class="btn"><label>다음</label></div>
@@ -144,8 +152,58 @@
     </div>
 
     <div id="content3">
-      <img src="image3.jpg" alt="추억 사진 3">
-      <p>추억 사진 3에 대한 내용</p>
+      <img src="5.jpg" alt="추억 사진 3">
+      <p>25년의 끝과</p>
+      <p>26년의 시작을 함께한</p>
+      <p>우리의 대표 릴스 찍은 날...ㅋㅋㅋㅋ</p>
+      <p>여보 언제나 예쁘지만</p>
+      <p>이 날도 진짜 예뻣는데...😍</p>
+      <div class="btnArea">
+        <div class="btn"><label>이전</label></div>
+        <div class="btn"><label>다음</label></div>
+      </div>
+    </div>
+
+    <div id="content4">
+      <img src="8.jpg" alt="추억 사진 3">
+      <p>나트랑!!</p>
+      <p>우리의 첫 해외 여행!!</p>
+      <p>진짜 이 떄 내 생의 최고의 힐링을 느꼈던거같아 여보</p>
+      <p>항상 나와 함께 해줘서 고마워</p>
+      <p>열심히 해서 우리 여행 많이 다닐거얌</p>
+      <div class="btnArea">
+        <div class="btn"><label>이전</label></div>
+        <div class="btn"><label>다음</label></div>
+      </div>
+    </div>
+
+    <div id="content5">
+      <img src="9.jpg" alt="추억 사진 3">
+      <p>마쓰야마</p>
+      <p>나트랑이 힐링을 제대로 느꼈다면</p>
+      <p>마쓰야마에서는 나는 진짜</p>
+      <p>하은이와 함께 우리가 가보고 싶은 곳들</p>
+      <p>전부 여행다니고싶다, 그렇게 해주고싶다 라는 생각이 들었어</p>
+      <div class="btnArea">
+        <div class="btn"><label>이전</label></div>
+        <div class="btn"><label>다음</label></div>
+      </div>
+    </div>
+
+    <div id="content6">
+      <p>아직 우리가 함께한 시간이 부족했을 때</p>
+      <p>하은이가 확신이 없었는데도</p>
+      <p>결혼하자고 하는 나에게 기회를 주고</p>
+      <p>결국에 승낙해줘서 고마워 하은아</p>
+      <p></p>
+      <p>언제나 지금처럼</p>
+      <p>우리 함께 서로를 아껴주고 사랑하며</p>
+      <p>그렇게 평생의 짝꿍으로</p>
+      <p>영원히 사랑하자 하은아</p>
+      <p></p>
+      <p>태어나줘서 고마워 하은아</p>
+      <p></p>
+      <p>생일 축하해❤️</p>
       <div class="btnArea">
         <div class="btn"><label>이전</label></div>
         <div class="btn"><label>처음으로</label></div>
@@ -153,65 +211,27 @@
     </div>
   </div>
 
-  <!-- 페이지 전환 스크립트 -->
-<!--   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggle = document.getElementById('toggle');
-      const pages = ['content1','content2','content3'];
-      let current = -1;
-
-      function show(idx) {
-        toggle.checked = true;
-        pages.forEach((id,i) => {
-          document.getElementById(id)
-                  .classList.toggle('active', i === idx);
-        });
-        current = idx;
-      }
-
-      // 토글 체크 상태 변화 감지
-      toggle.addEventListener('change', () => {
-        if (toggle.checked) {
-          show(0);
-        } else {
-          pages.forEach(id =>
-            document.getElementById(id).classList.remove('active')
-          );
-          current = -1;
-        }
-      });
-
-      // 이전/다음/처음으로 버튼
-      document.querySelectorAll('.btn label').forEach(lbl => {
-        lbl.addEventListener('click', () => {
-          const t = lbl.textContent.trim();
-          if (t === '이전') {
-            if (current > 0) show(current - 1);
-            else toggle.checked = false; // intro
-          } else if (t === '다음' && current < pages.length - 1) {
-            show(current + 1);
-          } else if (t === '처음으로') {
-            toggle.checked = false;
-          }
-        });
-      });
-    });
-  </script> -->
-    <!-- 페이지 전환 스크립트 -->
+  <!-- 페이지 전환 및 사운드 재생 스크립트 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('toggle');
-      const pages = ['content1','content2','content3'];
+      const pages = ['content1','content2','content3','content4','content5','content6'];
       let current = -1;
+      const audio = document.getElementById('uiAudio');
+      const introClick = document.getElementById('introClick');
 
-      // ← 여기를 추가
-      // iOS Safari 등이 페이지 리로드 시 체크박스 상태를 복원해오는 걸 방지
+      // iOS Safari 캐시된 토글 상태 초기화
       toggle.checked = false;
       pages.forEach(id =>
         document.getElementById(id).classList.remove('active')
       );
       current = -1;
-      // ← 여기까지
+
+      // Intro 클릭 시 오디오 재생 및 content1 표시
+      introClick.addEventListener('click', () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
 
       function show(idx) {
         toggle.checked = true;
@@ -222,11 +242,9 @@
         current = idx;
       }
 
-      // 토글 체크 상태 변화 감지
       toggle.addEventListener('change', () => {
-        if (toggle.checked) {
-          show(0);
-        } else {
+        if (toggle.checked) show(0);
+        else {
           pages.forEach(id =>
             document.getElementById(id).classList.remove('active')
           );
@@ -234,13 +252,12 @@
         }
       });
 
-      // 이전/다음/처음으로 버튼
       document.querySelectorAll('.btn label').forEach(lbl => {
         lbl.addEventListener('click', () => {
           const t = lbl.textContent.trim();
           if (t === '이전') {
             if (current > 0) show(current - 1);
-            else toggle.checked = false; // intro
+            else toggle.checked = false;
           } else if (t === '다음' && current < pages.length - 1) {
             show(current + 1);
           } else if (t === '처음으로') {
@@ -250,6 +267,5 @@
       });
     });
   </script>
-
 </body>
 </html>
